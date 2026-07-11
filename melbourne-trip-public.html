@@ -51,6 +51,10 @@ section{scroll-margin-top:56px;margin-bottom:26px}
 .mini-table th{text-align:left;background:var(--chip);padding:5px 8px;color:var(--ink)}
 .mini-table td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 .mini-table td:first-child{font-weight:600;white-space:nowrap}
+.food-list{list-style:none;margin:8px 0 0;padding:0}
+.food-list li{padding:0 0 10px}
+.food-list b{display:block;font-size:.88rem;color:var(--ink)}
+.food-list .d{display:block;color:var(--muted);font-size:.82rem;line-height:1.45;margin-top:1px}
 a.map{font-size:.8rem;text-decoration:none;margin-left:2px;opacity:.75}
 a.map:hover{opacity:1}
 .tag{display:inline-block;font-size:.72rem;background:var(--chip);color:var(--muted);
@@ -308,15 +312,14 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
           <b>電車站</b>：西側 Peel St #9、東側 Elizabeth St 各一站<br>
           <b>停車</b>：南側露天停車場、東側有室內停車場入口
         </div>
-        <table class="mini-table">
-          <tr><th>推薦美食</th><th>推薦理由</th></tr>
-          <tr><td>American Doughnut Kitchen</td><td>超人氣甜甜圈餐車，必吃之一</td></tr>
-          <tr><td>Bratwurst Shop &amp; Co</td><td>超人氣德式香腸熱狗堡，必吃之二</td></tr>
-          <tr><td>Boreks</td><td>當地人愛買的土耳其風味烤餅</td></tr>
-          <tr><td>Koko Black</td><td>人氣甜點店，精緻巧克力、蛋糕，號稱巧克力天堂</td></tr>
-          <tr><td>Market Lane Coffee</td><td>知名外帶手沖咖啡店</td></tr>
-          <tr><td>Limnos Seafood Pty Ltd</td><td>新鮮漁獲，還有生魚片、現開生蠔等即食海鮮</td></tr>
-        </table>
+        <ul class="food-list">
+          <li><b>American Doughnut Kitchen</b><span class="d">超人氣甜甜圈餐車，必吃之一</span></li>
+          <li><b>Bratwurst Shop &amp; Co</b><span class="d">超人氣德式香腸熱狗堡，必吃之二</span></li>
+          <li><b>Boreks</b><span class="d">當地人愛買的土耳其風味烤餅</span></li>
+          <li><b>Koko Black</b><span class="d">人氣甜點店，精緻巧克力、蛋糕，號稱巧克力天堂</span></li>
+          <li><b>Market Lane Coffee</b><span class="d">知名外帶手沖咖啡店</span></li>
+          <li><b>Limnos Seafood Pty Ltd</b><span class="d">新鮮漁獲，還有生魚片、現開生蠔等即食海鮮</span></li>
+        </ul>
       </details></div></div>
     <div class="item"><div class="time">15:00</div><div class="body"><div class="name">回飯店放東西、食材</div></div></div>
     <div class="item"><div class="time">16:00</div><div class="body"><div class="name">搭 96 或 12 電車前往（超出免費區，需刷卡）</div><div class="note">電車可刷信用卡、金融卡、手機感應（如 Apple Pay）</div></div></div>
@@ -341,21 +344,20 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
       <details class="mkt"><summary>🍴 南墨爾本市場 12 個必吃</summary>
         <a href="south-melbourne-market-food-map.webp" target="_blank"><img class="mkt-img" src="south-melbourne-market-food-map.webp" alt="南墨爾本市場攤位地圖" loading="lazy"></a>
         <div class="mkt-zones">開放：三 8:00–16:00｜五 8:00–17:00｜六・日 8:00–16:00　·　322-326 Coventry St</div>
-        <table class="mini-table">
-          <tr><th>店家</th><th>推薦</th></tr>
-          <tr><td>Agathe Patisserie</td><td>法式糕點，奶黃布丁、香蘭可頌、檸檬塔</td></tr>
-          <tr><td>Padre Coffee</td><td>手沖咖啡，招牌豆 Lucky Boy、Daddy's Girl</td></tr>
-          <tr><td>Aptus Seafood</td><td>生蠔、刺身、鮑魚卷；熱食有芝士焗龍蝦、魚塔可</td></tr>
-          <tr><td>Cannoleria</td><td>義大利 Cannoli，可搭開心果醬</td></tr>
-          <tr><td>Cobb Lane</td><td>創意可頌，黑芝麻、抹茶柚子</td></tr>
-          <tr><td>Code Black</td><td>2024 澳洲 Brewers Cup 冠軍，椰子冷萃</td></tr>
-          <tr><td>Market Borek</td><td>土耳其烤餅，招牌辛辣羊肉餡</td></tr>
-          <tr><td>Nutshoppe</td><td>1983 年起自家烘焙堅果</td></tr>
-          <tr><td>Fritz Gelato</td><td>得獎義式冰淇淋，肉桂薑、咖啡衝擊</td></tr>
-          <tr><td>Joy's Cupcakes</td><td>多口味杯子蛋糕（含素食）、焗芝士蛋糕</td></tr>
-          <tr><td>Ugo Burrata Bar</td><td>現吃義大利布拉塔鮮奶酪</td></tr>
-          <tr><td>Deli Nuts</td><td>慢烘堅果，招牌焦糖堅果</td></tr>
-        </table>
+        <ul class="food-list">
+          <li><b>Agathe Patisserie</b><span class="d">法式糕點，奶黃布丁、香蘭可頌、檸檬塔</span></li>
+          <li><b>Padre Coffee</b><span class="d">手沖咖啡，招牌豆 Lucky Boy、Daddy's Girl</span></li>
+          <li><b>Aptus Seafood</b><span class="d">生蠔、刺身、鮑魚卷；熱食有芝士焗龍蝦、魚塔可</span></li>
+          <li><b>Cannoleria</b><span class="d">義大利 Cannoli，可搭開心果醬</span></li>
+          <li><b>Cobb Lane</b><span class="d">創意可頌，黑芝麻、抹茶柚子</span></li>
+          <li><b>Code Black</b><span class="d">2024 澳洲 Brewers Cup 冠軍，椰子冷萃</span></li>
+          <li><b>Market Borek</b><span class="d">土耳其烤餅，招牌辛辣羊肉餡</span></li>
+          <li><b>Nutshoppe</b><span class="d">1983 年起自家烘焙堅果</span></li>
+          <li><b>Fritz Gelato</b><span class="d">得獎義式冰淇淋，肉桂薑、咖啡衝擊</span></li>
+          <li><b>Joy's Cupcakes</b><span class="d">多口味杯子蛋糕（含素食）、焗芝士蛋糕</span></li>
+          <li><b>Ugo Burrata Bar</b><span class="d">現吃義大利布拉塔鮮奶酪</span></li>
+          <li><b>Deli Nuts</b><span class="d">慢烘堅果，招牌焦糖堅果</span></li>
+        </ul>
       </details></div></div>
     <div class="item"><div class="time">11:00</div><div class="body"><div class="name">墨爾本市政廳 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A2%A8%E7%88%BE%E6%9C%AC%E5%B8%82%E6%94%BF%E5%BB%B3%20Australia" target="_blank" title="Google 地圖">📍</a> · 皇家拱廊 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%9A%87%E5%AE%B6%E6%8B%B1%E5%BB%8A%20Australia" target="_blank" title="Google 地圖">📍</a> · The Block Arcade <a class="map" href="https://www.google.com/maps/search/?api=1&query=The%20Block%20Arcade%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
     <div class="item"><div class="time">12:30</div><div class="body"><div class="name">午餐 Max on Hardware<span class="tag book">已預約</span> <a class="map" href="https://www.google.com/maps/search/?api=1&query=Max%20on%20Hardware%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">袋鼠肉</div></div></div>
