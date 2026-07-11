@@ -40,6 +40,17 @@ section{scroll-margin-top:56px;margin-bottom:26px}
 .body .name{font-weight:600}
 .item.drive .name{color:var(--muted);font-weight:500;font-size:.9rem}
 .note{color:var(--muted);font-size:.85rem;margin-top:2px;white-space:pre-line}
+.mkt{margin-top:6px;font-size:.85rem}
+.mkt summary{cursor:pointer;color:var(--accent2);font-weight:600;list-style:none}
+.mkt summary::-webkit-details-marker{display:none}
+.mkt summary::before{content:"▸ ";color:var(--accent)}
+.mkt[open] summary::before{content:"▾ "}
+.mkt-img{width:100%;max-width:520px;height:auto;border-radius:8px;border:1px solid var(--line);margin:8px 0;display:block}
+.mkt-zones{color:var(--muted);margin:6px 0 8px;line-height:1.6}
+.mini-table{width:100%;border-collapse:collapse;font-size:.83rem}
+.mini-table th{text-align:left;background:var(--chip);padding:5px 8px;color:var(--ink)}
+.mini-table td{padding:5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.mini-table td:first-child{font-weight:600;white-space:nowrap}
 a.map{font-size:.8rem;text-decoration:none;margin-left:2px;opacity:.75}
 a.map:hover{opacity:1}
 .tag{display:inline-block;font-size:.72rem;background:var(--chip);color:var(--muted);
@@ -288,7 +299,25 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
     <div class="item"><div class="time">09:00</div><div class="body"><div class="name">還車、飯店寄放行李</div><div class="note">Avis Southern Cross Station</div></div></div>
     <div class="item"><div class="time">09:30</div><div class="body"><div class="name">卡爾頓花園 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%A1%E7%88%BE%E9%A0%93%E8%8A%B1%E5%9C%92%20Australia" target="_blank" title="Google 地圖">📍</a> · 墨爾本博物館 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A2%A8%E7%88%BE%E6%9C%AC%E5%8D%9A%E7%89%A9%E9%A4%A8%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">墨爾本博物館需門票</div></div></div>
     <div class="item"><div class="time">　</div><div class="body"><div class="name">維多利亞圖書館 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%9C%96%E6%9B%B8%E9%A4%A8%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
-    <div class="item"><div class="time">12:30</div><div class="body"><div class="name">午餐：維多利亞市場 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%B8%82%E5%A0%B4%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">食材、伴手禮</div></div></div>
+    <div class="item"><div class="time">12:30</div><div class="body"><div class="name">午餐：維多利亞市場 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%B8%82%E5%A0%B4%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">食材、伴手禮</div>
+      <details class="mkt"><summary>🗺️ 市場分區與推薦美食</summary>
+        <a href="victoria-market-map.png" target="_blank"><img class="mkt-img" src="victoria-market-map.png" alt="維多利亞女王市場分區地圖" loading="lazy"></a>
+        <div class="mkt-zones">
+          <b>戶外棚架區</b>：蔬果、雜貨（夜市為夏冬限定）<br>
+          <b>美食街</b>／<b>肉品海鮮區</b>／<b>室內熟食・乾貨區</b>：集中在市場東側（Queen St、Elizabeth St 一帶）<br>
+          <b>電車站</b>：西側 Peel St #9、東側 Elizabeth St 各一站<br>
+          <b>停車</b>：南側露天停車場、東側有室內停車場入口
+        </div>
+        <table class="mini-table">
+          <tr><th>推薦美食</th><th>推薦理由</th></tr>
+          <tr><td>American Doughnut Kitchen</td><td>超人氣甜甜圈餐車，必吃之一</td></tr>
+          <tr><td>Bratwurst Shop &amp; Co</td><td>超人氣德式香腸熱狗堡，必吃之二</td></tr>
+          <tr><td>Boreks</td><td>當地人愛買的土耳其風味烤餅</td></tr>
+          <tr><td>Koko Black</td><td>人氣甜點店，精緻巧克力、蛋糕，號稱巧克力天堂</td></tr>
+          <tr><td>Market Lane Coffee</td><td>知名外帶手沖咖啡店</td></tr>
+          <tr><td>Limnos Seafood Pty Ltd</td><td>新鮮漁獲，還有生魚片、現開生蠔等即食海鮮</td></tr>
+        </table>
+      </details></div></div>
     <div class="item"><div class="time">15:00</div><div class="body"><div class="name">回飯店放東西、食材</div></div></div>
     <div class="item"><div class="time">16:00</div><div class="body"><div class="name">搭 96 或 12 電車前往（超出免費區，需刷卡）</div><div class="note">電車可刷信用卡、金融卡、手機感應（如 Apple Pay）</div></div></div>
     <div class="item"><div class="time">16:30</div><div class="body"><div class="name">St. Kilda 看企鵝 <a class="map" href="https://www.google.com/maps/search/?api=1&query=St.%20Kilda%20%E7%9C%8B%E4%BC%81%E9%B5%9D%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
