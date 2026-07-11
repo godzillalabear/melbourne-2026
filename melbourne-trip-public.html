@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>墨爾本旅遊計劃 2026/7/16–7/24</title>
+<style>
+:root{
+  --bg:#f4f1ea; --card:#fff; --ink:#2b2b2b; --muted:#7a756c;
+  --accent:#c65d3b; --accent2:#2e6b5e; --line:#e4ded2; --chip:#efe9dd;
+  --shadow:0 2px 10px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.65;-webkit-text-size-adjust:100%}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+header{background:linear-gradient(135deg,#c65d3b,#a8432a);color:#fff;padding:34px 20px 26px;text-align:center}
+header h1{margin:0 0 6px;font-size:1.7rem;letter-spacing:.5px}
+header p{margin:0;opacity:.92;font-size:.95rem}
+nav{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.96);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;padding:8px 10px;
+  scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{display:inline-block;padding:6px 12px;margin:2px;border-radius:20px;background:var(--chip);
+  color:var(--ink);font-size:.85rem;font-weight:600}
+nav a.info{background:#dfe8e4;color:var(--accent2)}
+.wrap{max-width:860px;margin:0 auto;padding:18px 16px 60px}
+section{scroll-margin-top:56px;margin-bottom:26px}
+.day-card{background:var(--card);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.day-head{background:var(--accent2);color:#fff;padding:14px 18px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.day-head .num{font-size:1.5rem;font-weight:800;line-height:1}
+.day-head .date{font-size:.9rem;opacity:.9}
+.day-head .title{font-size:1.05rem;font-weight:700;width:100%}
+.timeline{padding:6px 18px 4px}
+.item{display:flex;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.item:last-child{border-bottom:none}
+.time{flex:0 0 82px;font-weight:700;color:var(--accent);font-size:.85rem;padding-top:1px}
+.item.drive .time{color:var(--muted);font-weight:500}
+.body .name{font-weight:600}
+.item.drive .name{color:var(--muted);font-weight:500;font-size:.9rem}
+.note{color:var(--muted);font-size:.85rem;margin-top:2px;white-space:pre-line}
+a.map{font-size:.8rem;text-decoration:none;margin-left:2px;opacity:.75}
+a.map:hover{opacity:1}
+.tag{display:inline-block;font-size:.72rem;background:var(--chip);color:var(--muted);
+  border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:middle}
+.tag.book{background:#f7e4c9;color:#9a6b1e}
+.stay{background:#faf7f0;border-top:1px solid var(--line);padding:12px 18px;font-size:.9rem}
+.stay .lbl{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;
+  padding:1px 8px;font-size:.75rem;font-weight:700;margin-right:8px}
+.stay .price{color:var(--muted);font-size:.85rem;margin-top:4px}
+.stay .links{margin-top:6px;font-size:.85rem}
+.stay .links a{margin-right:14px}
+.info-card{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:16px 18px}
+.info-card h3{margin:0 0 10px;color:var(--accent2);font-size:1.05rem;
+  border-bottom:2px solid var(--line);padding-bottom:6px}
+.info-card h4{margin:14px 0 4px;font-size:.95rem}
+.info-card ul{margin:6px 0;padding-left:20px}
+.info-card li{margin:3px 0;font-size:.9rem}
+.fig-row{display:flex;flex-wrap:wrap;gap:16px;margin:12px 0 4px;justify-content:center}
+.fig{margin:0;flex:1 1 200px;max-width:240px;text-align:center}
+.fig svg{width:100%;height:auto;border-radius:8px}
+.fig figcaption{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.45;text-align:left}
+.psign{width:150px;margin:0 auto;border:3px solid #111;border-radius:6px;overflow:hidden;background:#fff;font-family:Arial,sans-serif}
+.psign .prow{border-bottom:2px solid #111;padding:6px 6px 8px;position:relative}
+.psign .prow:last-child{border-bottom:none}
+.psign .prow.red{color:#d0021b}
+.psign .prow.split{display:flex;padding:0}
+.psign .pcell{flex:1;padding:6px 6px 8px}
+.psign .pcell:first-child{border-right:2px solid #111}
+.psign .big{font-size:1.7rem;font-weight:800;color:#0f7a34;line-height:1}
+.psign .big.sm{font-size:1.4rem}
+.psign .prow.red .big{color:#d0021b}
+.psign .lbl{font-size:.6rem;font-weight:700;letter-spacing:.5px;color:#0f7a34}
+.psign .dis{font-size:.7rem;font-weight:700;color:#1b4fa0}
+.psign .ptxt{font-size:.62rem;font-weight:700;line-height:1.2}
+.psign .ptxt2{font-size:.55rem;font-weight:700;color:#0f7a34;line-height:1.25;margin-top:2px}
+.psign .nostop{font-size:1.1rem}
+.psign .parrow{font-size:1rem;font-weight:800;color:#d0021b;margin-top:2px}
+.psign .parrow.g{color:#0f7a34}
+.psign .prow.red{display:flex;align-items:center;gap:4px;justify-content:space-between}
+.flight-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.flight-box{background:var(--chip);border-radius:10px;padding:10px 12px;font-size:.88rem}
+.flight-box b{color:var(--accent2)}
+.cost-table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:6px}
+.cost-table td{padding:6px 8px;border-bottom:1px solid var(--line)}
+.cost-table td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--accent)}
+.muted{color:var(--muted);font-size:.85rem}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
+@media(max-width:560px){
+  .flight-grid{grid-template-columns:1fr}
+  .time{flex-basis:66px;font-size:.8rem}
+  header h1{font-size:1.35rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🇦🇺 墨爾本家族之旅</h1>
+  <p>2026 年 7 月 16 日 – 7 月 24 日　·　9 天自駕行程</p>
+</header>
+
+<nav id="nav">
+  <a href="#d1">Day1 市區</a>
+  <a href="#d2">Day2 大洋路①</a>
+  <a href="#d3">Day3 大洋路②</a>
+  <a href="#d4">Day4 格蘭坪</a>
+  <a href="#d5">Day5 菲利浦島</a>
+  <a href="#d6">Day6 威靈遜岬</a>
+  <a href="#d7">Day7 小火車</a>
+  <a href="#d8">Day8 市區</a>
+  <a href="#d9">Day9 漫遊</a>
+  <a href="#flights" class="info">✈️ 航班</a>
+  <a href="#drive" class="info">🚗 自駕</a>
+  <a href="#trs" class="info">💸 退稅</a>
+  <a href="#tips" class="info">🔌 實用</a>
+  <a href="#shop" class="info">🛍️ 伴手禮</a>
+</nav>
+
+<div class="wrap">
+
+<!-- DAY 1 -->
+<section id="d1"><div class="day-card">
+  <div class="day-head"><span class="num">1</span><span class="date">7/16（四）</span>
+    <span class="title">墨爾本午後散步</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">11:15</div><div class="body"><div class="name">抵達墨爾本</div></div></div>
+    <div class="item"><div class="time">11:15</div><div class="body"><div class="name">出關、取行李</div></div></div>
+    <div class="item"><div class="time">12:00</div><div class="body"><div class="name">機場接送</div><div class="note">Klook 13 人座 $3971</div></div></div>
+    <div class="item"><div class="time">12:30</div><div class="body"><div class="name">至飯店寄放行李、稍作整理</div></div></div>
+    <div class="item"><div class="time">13:00</div><div class="body"><div class="name">午餐：體驗澳洲當地麥當勞 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E9%AB%94%E9%A9%97%E6%BE%B3%E6%B4%B2%E7%95%B6%E5%9C%B0%E9%BA%A5%E7%95%B6%E5%8B%9E%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">McDonald's Collins Street</div></div></div>
+    <div class="item"><div class="time">14:00</div><div class="body"><div class="name">聯邦廣場 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E8%81%AF%E9%82%A6%E5%BB%A3%E5%A0%B4%20Australia" target="_blank" title="Google 地圖">📍</a> · 費蓮達車站 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E8%B2%BB%E8%93%AE%E9%81%94%E8%BB%8A%E7%AB%99%20Australia" target="_blank" title="Google 地圖">📍</a> · 澳洲動態影像中心 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%BE%B3%E6%B4%B2%E5%8B%95%E6%85%8B%E5%BD%B1%E5%83%8F%E4%B8%AD%E5%BF%83%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">電車 + 步行</div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">聖保羅座堂 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E8%81%96%E4%BF%9D%E7%BE%85%E5%BA%A7%E5%A0%82%20Australia" target="_blank" title="Google 地圖">📍</a> · 塗鴉街 Hosier Ln <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A1%97%E9%B4%89%E8%A1%97%20Hosier%20Ln%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">Lune Croissanterie（Russell St） <a class="map" href="https://www.google.com/maps/search/?api=1&query=Lune%20Croissanterie%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">17:00 closed，墨爾本好吃可頌，可買去 Dockland 看夕陽吃</div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">亞拉河畔、維多利亞女王花園散步 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E4%BA%9E%E6%8B%89%E6%B2%B3%E7%95%94%E3%80%81%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%A5%B3%E7%8E%8B%E8%8A%B1%E5%9C%92%E6%95%A3%E6%AD%A5%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">18:00</div><div class="body"><div class="name">晚餐 Ludlow Bar & Dining Room<span class="tag book">已預約</span> <a class="map" href="https://www.google.com/maps/search/?api=1&query=Ludlow%20Bar%20%26%20Dining%20Room%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">亞拉河畔景觀餐廳</div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">採買</div><div class="note">Woolworths Metro Southern Cross（營業至 23:30）</div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>The Canvas Apartment Hotel</b>
+    <div class="note">可提前寄放行李、有洗衣及烘衣機</div>
+    <div class="price">雙臥室公寓(4) $5945　·　雙臥室公寓(3) $5945　·　雙人房 $3369</div>
+    <div class="links"><a href="https://www.booking.com/Share-fS6TN6" target="_blank">Booking</a><a href="https://maps.app.goo.gl/NcUpgud9RwrgvxvN8" target="_blank">📍 地圖</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 2 -->
+<section id="d2"><div class="day-card">
+  <div class="day-head"><span class="num">2</span><span class="date">7/17（五）</span>
+    <span class="title">大洋路之旅 Day 1</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">09:00</div><div class="body"><div class="name">租車公司取車</div><div class="note">Avis Southern Cross Station（距住宿步行 10 分鐘）</div></div></div>
+    <div class="item drive"><div class="time">09:30</div><div class="body"><div class="name">車程 1 小時</div></div></div>
+    <div class="item"><div class="time">10:30</div><div class="body"><div class="name">Geelong Waterfront <a class="map" href="https://www.google.com/maps/search/?api=1&query=Geelong%20Waterfront%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">彩繪木頭人像 Baywalk Bollards</div></div></div>
+    <div class="item drive"><div class="time">11:00</div><div class="body"><div class="name">車程 1 小時</div></div></div>
+    <div class="item"><div class="time">12:00</div><div class="body"><div class="name">午餐 Aireys Inlet <a class="map" href="https://www.google.com/maps/search/?api=1&query=Aireys%20Inlet%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">Aireys Pub（牛排、漢堡）／ Aireys Inlet Fish & Chips（炸魚薯條、塔可）</div></div></div>
+    <div class="item"><div class="time">13:25</div><div class="body"><div class="name">Split Point Lighthouse <a class="map" href="https://www.google.com/maps/search/?api=1&query=Split%20Point%20Lighthouse%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">小紅帽燈塔、鷹岩</div></div></div>
+    <div class="item"><div class="time">14:10</div><div class="body"><div class="name">大洋路門牌 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%B4%8B%E8%B7%AF%E9%96%80%E7%89%8C%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">合影即可</div></div></div>
+    <div class="item"><div class="time">14:50</div><div class="body"><div class="name">Teddy's Lookout <a class="map" href="https://www.google.com/maps/search/?api=1&query=Teddy%27s%20Lookout%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">瞭望台</div></div></div>
+    <div class="item"><div class="time">15:40</div><div class="body"><div class="name">Kennett River Walk <a class="map" href="https://www.google.com/maps/search/?api=1&query=Kennett%20River%20Walk%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">尋找野生無尾熊（Koala Kafe）</div></div></div>
+    <div class="item"><div class="time">16:50</div><div class="body"><div class="name">Cape Patton Lookout <a class="map" href="https://www.google.com/maps/search/?api=1&query=Cape%20Patton%20Lookout%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">大洋路最佳觀景台</div></div></div>
+    <div class="item"><div class="time">17:20</div><div class="body"><div class="name">阿波羅灣 Apollo Bay <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E9%98%BF%E6%B3%A2%E7%BE%85%E7%81%A3%20Apollo%20Bay%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">Dooley's Premium Ice Cream（21:00 關）
+採買晚餐食材 FoodWorks 或 IGA Apollo Bay Plus Liquor</div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>Seaview Motel & Apartments</b>
+    <div class="note">飯店有投幣式洗衣機</div>
+    <div class="price">單臥室 $3104　·　雙臥室 $4527</div>
+    <div class="links"><a href="https://www.booking.com/Share-lwXkOOh" target="_blank">Booking</a><a href="https://maps.app.goo.gl/gD6cCA9rkTbYf2s86" target="_blank">📍 路線圖</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 3 -->
+<section id="d3"><div class="day-card">
+  <div class="day-head"><span class="num">3</span><span class="date">7/18（六）</span>
+    <span class="title">大洋路之旅 Day 2</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">08:00</div><div class="body"><div class="name">出發</div></div></div>
+    <div class="item"><div class="time">08:05</div><div class="body"><div class="name">Marriner's Lookout <a class="map" href="https://www.google.com/maps/search/?api=1&query=Marriner%27s%20Lookout%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">停車場走到觀景台約 10 分鐘，俯瞰阿波羅灣</div></div></div>
+    <div class="item"><div class="time">09:00</div><div class="body"><div class="name">大奧特威國家公園 Cape Otway <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%A5%A7%E7%89%B9%E5%A8%81%E5%9C%8B%E5%AE%B6%E5%85%AC%E5%9C%92%20Cape%20Otway%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">Maits Rest Rainforest Walk 環形步道約 30 分鐘</div></div></div>
+    <div class="item drive"><div class="time">10:00</div><div class="body"><div class="name">車程 1 小時</div></div></div>
+    <div class="item"><div class="time">11:00</div><div class="body"><div class="name">吉普森石階 Gibson Steps <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%90%89%E6%99%AE%E6%A3%AE%E7%9F%B3%E9%9A%8E%20Gibson%20Steps%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">可走下海灘</div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">十二使徒岩 Twelve Apostles <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%81%E4%BA%8C%E4%BD%BF%E5%BE%92%E5%B2%A9%20Twelve%20Apostles%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">洛克阿德峽谷 Loch Ard Gorge <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%B4%9B%E5%85%8B%E9%98%BF%E5%BE%B7%E5%B3%BD%E8%B0%B7%20Loch%20Ard%20Gorge%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">現在已不能走下海灘／Tom and Eva Lookout 往返約 10–20 分鐘</div></div></div>
+    <div class="item"><div class="time">12:40</div><div class="body"><div class="name">午餐 坎貝爾港 Port Campbell <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%9D%8E%E8%B2%9D%E7%88%BE%E6%B8%AF%20Port%20Campbell%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">Waves Cafe Bar Restaurant／12 Rocks Beach Bar Cafe</div></div></div>
+    <div class="item"><div class="time">14:15</div><div class="body"><div class="name">London Bridge <a class="map" href="https://www.google.com/maps/search/?api=1&query=London%20Bridge%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">海蝕倫敦橋</div></div></div>
+    <div class="item"><div class="time">14:50</div><div class="body"><div class="name">The Grotto <a class="map" href="https://www.google.com/maps/search/?api=1&query=The%20Grotto%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">岩穴</div></div></div>
+    <div class="item"><div class="time">16:10</div><div class="body"><div class="name">Warrnambool 休息站及採買</div><div class="note">Woolworths ／ Coles Warrnambool</div></div></div>
+    <div class="item drive"><div class="time">16:30</div><div class="body"><div class="name">車程 2 小時</div></div></div>
+    <div class="item"><div class="time">18:30</div><div class="body"><div class="name">抵達 Grampians View Cottages & Units <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%8A%B5%E9%81%94%20Grampians%20View%20Cottages%20%26%20Units%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>維多利亞景觀別墅酒店</b>
+    <div class="note">飯店有投幣式洗衣機</div>
+    <div class="price">4 人 $5395　·　3 人 $4073　·　2 人 $3413</div>
+    <div class="links"><a href="https://www.booking.com/Share-fS6TN6" target="_blank">Booking</a><a href="https://maps.app.goo.gl/3yhPS3Q9J7uGaSF47" target="_blank">📍 路線圖</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 4 -->
+<section id="d4"><div class="day-card">
+  <div class="day-head"><span class="num">4</span><span class="date">7/19（日）</span>
+    <span class="title">格蘭坪國家公園 + 疏芬山夜間燈光秀</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">07:30</div><div class="body"><div class="name">出發</div></div></div>
+    <div class="item"><div class="time">08:00</div><div class="body"><div class="name">麥肯錫瀑布 MacKenzie Falls <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%A5%E8%82%AF%E9%8C%AB%E7%80%91%E5%B8%83%20MacKenzie%20Falls%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">瀑布步道：來回約 2 km、260 階，可至瀑布底層
+觀景步道：約 1.9 km，輪椅可走，俯瞰瀑布</div></div></div>
+    <div class="item"><div class="time">10:15</div><div class="body"><div class="name">Reeds Lookout & The Balconies <a class="map" href="https://www.google.com/maps/search/?api=1&query=Reeds%20Lookout%20%26%20The%20Balconies%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">惡魔之口</div></div></div>
+    <div class="item"><div class="time">11:40</div><div class="body"><div class="name">午餐 Halls Gap <a class="map" href="https://www.google.com/maps/search/?api=1&query=Halls%20Gap%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">Flame Brothers（煙燻烤肉、手撕豬）／ Paper Scissors Rock Brew Co（pizza、三明治）／ Livefast Cafe（輕食）</div></div></div>
+    <div class="item"><div class="time">13:05</div><div class="body"><div class="name">博羅卡觀景台 Boroka Lookout <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E7%BE%85%E5%8D%A1%E8%A7%80%E6%99%AF%E5%8F%B0%20Boroka%20Lookout%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item drive"><div class="time">13:35</div><div class="body"><div class="name">車程 2 小時</div></div></div>
+    <div class="item"><div class="time">15:40</div><div class="body"><div class="name">疏芬山礦場 Sovereign Hill<span class="tag book">已購票</span> <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%96%8F%E8%8A%AC%E5%B1%B1%E7%A4%A6%E5%A0%B4%20Sovereign%20Hill%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">Winter Wonderlights 燈光表演 17:45–19:00</div></div></div>
+    <div class="item"><div class="time">19:00</div><div class="body"><div class="name">晚餐</div><div class="note">The Red Lion Ballarat（義&美式）／ Carboni's Italian Kitchen
+超市採買（可備明日午餐）：Ryans IGA ／ Woolworths Ballarat Central</div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>尤里卡斯達可德假日公園</b>
+    <div class="note">有投幣式洗衣機</div>
+    <div class="price">4 人 $4869　·　5 人 $5736</div>
+    <div class="links"><a href="https://www.booking.com/Share-gD1m0ts" target="_blank">Booking</a><a href="https://maps.app.goo.gl/hc58PK8sz1UQvBM17" target="_blank">📍 路線圖</a><a href="https://shtickets.sovereignhill.com.au/sov_b2c/ticketselection.html?eventCode=WWL" target="_blank">🎟️ 燈光秀票</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 5 -->
+<section id="d5"><div class="day-card">
+  <div class="day-head"><span class="num">5</span><span class="date">7/20（一）</span>
+    <span class="title">菲利浦島動物日</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">07:30</div><div class="body"><div class="name">出發</div></div></div>
+    <div class="item"><div class="time">09:00</div><div class="body"><div class="name">Brighton Bathing Boxes <a class="map" href="https://www.google.com/maps/search/?api=1&query=Brighton%20Bathing%20Boxes%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">彩虹小屋</div></div></div>
+    <div class="item"><div class="time">10:30</div><div class="body"><div class="name">Moonlit Sanctuary 野生動物園<span class="tag">現場購票</span> <a class="map" href="https://www.google.com/maps/search/?api=1&query=Moonlit%20Sanctuary%20%E9%87%8E%E7%94%9F%E5%8B%95%E7%89%A9%E5%9C%92%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">動物秀 11:00／14:30；另有付費互動（需預約）及免費講解
+午餐需自備，可於園區野餐或簡易咖啡廳
+<a href="https://moonlitsanctuary.com.au/visit/animal-encounters/" target="_blank">動物互動資訊</a></div></div></div>
+    <div class="item"><div class="time">14:50</div><div class="body"><div class="name">The Nobbies <a class="map" href="https://www.google.com/maps/search/?api=1&query=The%20Nobbies%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">海豹岩，步道旁有許多企鵝巢穴</div></div></div>
+    <div class="item"><div class="time">16:30</div><div class="body"><div class="name">Penguin Parade 企鵝遊行<span class="tag book">已預約</span> <a class="map" href="https://www.google.com/maps/search/?api=1&query=Penguin%20Parade%20%E4%BC%81%E9%B5%9D%E9%81%8A%E8%A1%8C%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">冬季（6–8月）約 17:30 到達；建議企鵝預計上岸前至少 1 小時抵達，可待上岸後至木棧道近距離觀看</div></div></div>
+    <div class="item"><div class="time">18:15</div><div class="body"><div class="name">Cowes 小鎮 <a class="map" href="https://www.google.com/maps/search/?api=1&query=Cowes%20%E5%B0%8F%E9%8E%AE%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">許多超市可購買食材（建議備隔天食材）</div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>Guesthouse on Grampian</b>
+    <div class="note">有洗衣、烘衣機，需自備毛巾、盥洗用品</div>
+    <div class="price">全 $7861</div>
+    <div class="links"><a href="https://www.booking.com/Share-YlUHV9" target="_blank">Booking</a><a href="https://maps.app.goo.gl/13s4U83oJ4ZCE36d9" target="_blank">📍 路線圖</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 6 -->
+<section id="d6"><div class="day-card">
+  <div class="day-head"><span class="num">6</span><span class="date">7/21（二）</span>
+    <span class="title">威靈遜岬海洋探索</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">08:00</div><div class="body"><div class="name">出發</div></div></div>
+    <div class="item drive"><div class="time">08:00</div><div class="body"><div class="name">車程 2.5 小時</div></div></div>
+    <div class="item"><div class="time">10:30</div><div class="body"><div class="name">Wilsons Promontory Cruises 報到</div><div class="note">需在開船前半小時報到</div></div></div>
+    <div class="item"><div class="time">11:00</div><div class="body"><div class="name">2.5 小時野生海豹遊船<span class="tag book">已預約</span> <a class="map" href="https://www.google.com/maps/search/?api=1&query=2.5%20%E5%B0%8F%E6%99%82%E9%87%8E%E7%94%9F%E6%B5%B7%E8%B1%B9%E9%81%8A%E8%88%B9%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">可在出發前先墊胃／Kanowana Island 海豹</div></div></div>
+    <div class="item"><div class="time">13:30</div><div class="body"><div class="name">午餐 Tidal River General Store <a class="map" href="https://www.google.com/maps/search/?api=1&query=Tidal%20River%20General%20Store%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">買熱食或自備午餐</div></div></div>
+    <div class="item"><div class="time">14:00</div><div class="body"><div class="name">Tidal River <a class="map" href="https://www.google.com/maps/search/?api=1&query=Tidal%20River%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">茶色河水及小橋</div></div></div>
+    <div class="item"><div class="time">14:40</div><div class="body"><div class="name">Squeaky Beach <a class="map" href="https://www.google.com/maps/search/?api=1&query=Squeaky%20Beach%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">吱吱叫海灘</div></div></div>
+    <div class="item"><div class="time">15:40</div><div class="body"><div class="name">Big Drift <a class="map" href="https://www.google.com/maps/search/?api=1&query=Big%20Drift%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">沙丘（單程 30–40 分鐘）</div></div></div>
+    <div class="item"><div class="time">18:00</div><div class="body"><div class="name">Inverloch <a class="map" href="https://www.google.com/maps/search/?api=1&query=Inverloch%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">超市 FoodWorks（營業至 19:30，準備隔天午餐）</div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>Scotty's Place – Luxury Retreat</b>
+    <div class="note">有洗衣、烘衣機</div>
+    <div class="price">全 $19263</div>
+    <div class="links"><a href="https://www.booking.com/Share-hv9FtG" target="_blank">Booking</a><a href="https://maps.app.goo.gl/3AcGucWoJfRUnaPD9" target="_blank">📍 路線圖</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 7 -->
+<section id="d7"><div class="day-card">
+  <div class="day-head"><span class="num">7</span><span class="date">7/22（三）</span>
+    <span class="title">森林火車 · 酒莊巡禮</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">08:30</div><div class="body"><div class="name">出發</div></div></div>
+    <div class="item"><div class="time">10:00</div><div class="body"><div class="name">Belgrave Station <a class="map" href="https://www.google.com/maps/search/?api=1&query=Belgrave%20Station%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">乘車前 1 小時需報到，半小時前報到處關閉，附近森林公園可晃</div></div></div>
+    <div class="item"><div class="time">11:00</div><div class="body"><div class="name">普芬比利蒸汽小火車 → Lakeside <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%99%AE%E8%8A%AC%E6%AF%94%E5%88%A9%E8%92%B8%E6%B1%BD%E5%B0%8F%E7%81%AB%E8%BB%8A%20%E2%86%92%20Lakeside%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">坐火車頭右手邊後半段可看到火車過彎</div></div></div>
+    <div class="item"><div class="time">11:55</div><div class="body"><div class="name">Lakeside <a class="map" href="https://www.google.com/maps/search/?api=1&query=Lakeside%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">準備午餐或唯一餐廳 Railway Café</div></div></div>
+    <div class="item"><div class="time">14:15</div><div class="body"><div class="name">普芬比利蒸汽小火車 → Belgrave <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%99%AE%E8%8A%AC%E6%AF%94%E5%88%A9%E8%92%B8%E6%B1%BD%E5%B0%8F%E7%81%AB%E8%BB%8A%20%E2%86%92%20Belgrave%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">15:55</div><div class="body"><div class="name">入住 Balgownie Estate 酒莊</div><div class="note">酒莊參觀、品酒、晚餐（Two-course $85 ／ Three-course $105）</div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>Balgownie Estate Yarra Valley</b>
+    <div class="note">含早餐（7:00–10:00）</div>
+    <div class="price">2 人 × 3 間 $6262　·　3 人 $11187</div>
+    <div class="links"><a href="https://www.booking.com/Share-gVxkI7" target="_blank">Booking</a><a href="https://maps.app.goo.gl/NBA6M9caoMYQhneD6" target="_blank">📍 路線圖</a><a href="https://bookings.puffingbillyrailway.org.au/BookingCat/Availability/" target="_blank">🚂 小火車訂票</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 8 -->
+<section id="d8"><div class="day-card">
+  <div class="day-head"><span class="num">8</span><span class="date">7/23（四）</span>
+    <span class="title">維多利亞市場 · 再見小企鵝</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">08:00</div><div class="body"><div class="name">出發（車程 1 小時）</div></div></div>
+    <div class="item"><div class="time">09:00</div><div class="body"><div class="name">還車、飯店寄放行李</div><div class="note">Avis Southern Cross Station</div></div></div>
+    <div class="item"><div class="time">09:30</div><div class="body"><div class="name">卡爾頓花園 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%A1%E7%88%BE%E9%A0%93%E8%8A%B1%E5%9C%92%20Australia" target="_blank" title="Google 地圖">📍</a> · 墨爾本博物館 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A2%A8%E7%88%BE%E6%9C%AC%E5%8D%9A%E7%89%A9%E9%A4%A8%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">墨爾本博物館需門票</div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">維多利亞圖書館 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%9C%96%E6%9B%B8%E9%A4%A8%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">12:30</div><div class="body"><div class="name">午餐：維多利亞市場 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E5%A4%9A%E5%88%A9%E4%BA%9E%E5%B8%82%E5%A0%B4%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">食材、伴手禮</div></div></div>
+    <div class="item"><div class="time">15:00</div><div class="body"><div class="name">回飯店放東西、食材</div></div></div>
+    <div class="item"><div class="time">16:00</div><div class="body"><div class="name">搭 96 或 12 電車前往（超出免費區，需刷卡）</div><div class="note">電車可刷信用卡、金融卡、手機感應（如 Apple Pay）</div></div></div>
+    <div class="item"><div class="time">16:30</div><div class="body"><div class="name">St. Kilda 看企鵝 <a class="map" href="https://www.google.com/maps/search/?api=1&query=St.%20Kilda%20%E7%9C%8B%E4%BC%81%E9%B5%9D%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">17:30</div><div class="body"><div class="name">返回（96 或 12 電車）</div><div class="note">有伴手禮需求可逛 Woolworths Metro Southern Cross（至 23:30）</div></div></div>
+  </div>
+  <div class="stay"><span class="lbl">住宿</span><b>The Canvas Apartment Hotel</b>
+    <div class="note">可於入住前及退房後寄放行李、有洗衣及烘衣機</div>
+    <div class="price">雙臥室公寓(4) $4418　·　雙臥室公寓(3) $4418　·　雙人房 $2885</div>
+    <div class="links"><a href="https://www.booking.com/Share-fS6TN6" target="_blank">Booking</a></div>
+  </div>
+</div></section>
+
+<!-- DAY 9 -->
+<section id="d9"><div class="day-card">
+  <div class="day-head"><span class="num">9</span><span class="date">7/24（五）</span>
+    <span class="title">墨爾本悠閒漫遊 · 返程</span></div>
+  <div class="timeline">
+    <div class="item"><div class="time">08:30</div><div class="body"><div class="name">飯店櫃台寄放行李</div></div></div>
+    <div class="item"><div class="time">08:45</div><div class="body"><div class="name">早餐 南墨爾本市場 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%A2%A8%E7%88%BE%E6%9C%AC%E5%B8%82%E5%A0%B4%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">搭 96／12／109 電車（超出免費區）
+<a href="https://tifffoodtravel.com/south-melbourne-market-food-guide/" target="_blank">美食指南</a></div></div></div>
+    <div class="item"><div class="time">11:00</div><div class="body"><div class="name">墨爾本市政廳 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A2%A8%E7%88%BE%E6%9C%AC%E5%B8%82%E6%94%BF%E5%BB%B3%20Australia" target="_blank" title="Google 地圖">📍</a> · 皇家拱廊 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%9A%87%E5%AE%B6%E6%8B%B1%E5%BB%8A%20Australia" target="_blank" title="Google 地圖">📍</a> · The Block Arcade <a class="map" href="https://www.google.com/maps/search/?api=1&query=The%20Block%20Arcade%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">12:30</div><div class="body"><div class="name">午餐 Max on Hardware<span class="tag book">已預約</span> <a class="map" href="https://www.google.com/maps/search/?api=1&query=Max%20on%20Hardware%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">袋鼠肉</div></div></div>
+    <div class="item"><div class="time">14:00</div><div class="body"><div class="name">國會大廈 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%9C%8B%E6%9C%83%E5%A4%A7%E5%BB%88%20Australia" target="_blank" title="Google 地圖">📍</a> · 聖巴特利爵主教座堂 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E8%81%96%E5%B7%B4%E7%89%B9%E5%88%A9%E7%88%B5%E4%B8%BB%E6%95%99%E5%BA%A7%E5%A0%82%20Australia" target="_blank" title="Google 地圖">📍</a></div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">35 路復古電車 – 費德蓮車站</div><div class="note">上車站點：Bourke St/Spring St (#0) 或 Spring St/Flinders St (#8)</div></div></div>
+    <div class="item"><div class="time">　</div><div class="body"><div class="name">城市探索</div><div class="note">景點：皇家植物園、亞拉河遊船（付費）、Dockland 看夕陽
+下午茶：Degraves St Laneway 咖啡街
+Outlet：Spencer Outlet Centre／DFO South Wharf（走路 15 分鐘）</div></div></div>
+    <div class="item"><div class="time">18:00</div><div class="body"><div class="name">覓食時間</div></div></div>
+    <div class="item"><div class="time">19:30</div><div class="body"><div class="name">回飯店領行李</div><div class="note">19:45 前領行李</div></div></div>
+    <div class="item"><div class="time">20:15</div><div class="body"><div class="name">機場接送</div><div class="note">Klook 13 人座 $3971</div></div></div>
+    <div class="item"><div class="time">20:45</div><div class="body"><div class="name">抵達機場、辦理退稅 <a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%8A%B5%E9%81%94%E6%A9%9F%E5%A0%B4%E3%80%81%E8%BE%A6%E7%90%86%E9%80%80%E7%A8%85%20Australia" target="_blank" title="Google 地圖">📍</a></div><div class="note">班機 23:45</div></div></div>
+  </div>
+</div></section>
+
+<!-- FLIGHTS -->
+<section id="flights"><div class="info-card">
+  <h3>✈️ 航班資訊</h3>
+  <div class="flight-grid">
+    <div class="flight-box"><b>去程</b><br>
+      國泰 CX431　高雄→香港　11:10–12:50<br>
+      國泰 CX479　台北→香港　21:05–23:05<br>
+      國泰 CX105　香港→墨爾本　00:20–11:15</div>
+    <div class="flight-box"><b>回程</b><br>
+      國泰 CX178　墨爾本→香港　23:45–06:55<br>
+      國泰 CX530　香港→台北　08:35–10:25<br>
+      國泰 CX432　香港→高雄　08:35–10:10</div>
+  </div>
+  <h4>澳洲電子旅行簽證（ETA 601）</h4>
+  <ul>
+    <li>透過官方 APP 申請，服務費 20 澳幣</li>
+    <li>下載官方 APP：搜尋並安裝「AustralianETA」（iOS／Android）</li>
+  </ul>
+</div></section>
+
+<!-- DRIVE -->
+<section id="drive"><div class="info-card">
+  <h3>🚗 自駕 & 停車注意</h3>
+  <h4>Hook Turn 勾型轉彎（汽車二段式左轉）</h4>
+  <ul>
+    <li><b>❶</b> 綠燈時打右方向燈，但將車直線開進最左側車道，前行至十字路口左前方（行人穿越道前）停下。</li>
+    <li><b>❷</b> 在路口左前方原地停等，車身橫擋車流是合法的，保持耐心，絕對不能動。</li>
+    <li><b>❸</b> 注意即將開往的橫向車道；當該向燈轉綠（或原方向轉紅、電車完全停下），立刻順勢右轉駛入對向車道。</li>
+  </ul>
+  <div class="fig-row">
+    <figure class="fig">
+      <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right Turn From Left Only 標誌">
+        <rect x="4" y="4" width="192" height="252" rx="12" fill="#fff" stroke="#111" stroke-width="4"/>
+        <!-- hook arrow: up from bottom-center then right -->
+        <path d="M92 210 L92 96 Q92 78 110 78 L150 78 L150 60 L182 92 L150 124 L150 106 L120 106 Q114 106 114 120 L114 210 Z"
+              fill="#2b2b2b"/>
+        <text x="100" y="232" text-anchor="middle" font-family="Arial" font-weight="700" font-size="21" fill="#111">RIGHT TURN</text>
+        <text x="100" y="250" text-anchor="middle" font-family="Arial" font-weight="700" font-size="17" fill="#111">FROM LEFT ONLY</text>
+      </svg>
+      <figcaption>路口標誌：此路口右轉必須從最左車道用勾型轉彎</figcaption>
+    </figure>
+    <figure class="fig">
+      <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hook Turn 勾型轉彎示意圖">
+        <rect x="0" y="0" width="240" height="240" fill="#7a7f83"/>
+        <!-- roads -->
+        <rect x="90" y="0" width="60" height="240" fill="#5c6165"/>
+        <rect x="0" y="90" width="240" height="60" fill="#5c6165"/>
+        <line x1="120" y1="0" x2="120" y2="90" stroke="#e9d24a" stroke-width="2" stroke-dasharray="8 6"/>
+        <line x1="120" y1="150" x2="120" y2="240" stroke="#e9d24a" stroke-width="2" stroke-dasharray="8 6"/>
+        <line x1="0" y1="120" x2="90" y2="120" stroke="#e9d24a" stroke-width="2" stroke-dasharray="8 6"/>
+        <line x1="150" y1="120" x2="240" y2="120" stroke="#e9d24a" stroke-width="2" stroke-dasharray="8 6"/>
+        <!-- path: enter from bottom-left lane, go up, wait top-left, turn right -->
+        <path d="M104 240 L104 150 Q104 138 116 138 L200 138" fill="none" stroke="#f4c020" stroke-width="4" stroke-dasharray="7 5"/>
+        <polygon points="200,138 190,132 190,144" fill="#f4c020"/>
+        <!-- traffic lights (four corners) -->
+        <g>
+          <rect x="8" y="60" width="16" height="26" rx="3" fill="#222"/><circle cx="16" cy="68" r="4" fill="#e23b3b"/><circle cx="16" cy="78" r="4" fill="#4caf50"/>
+          <rect x="216" y="60" width="16" height="26" rx="3" fill="#222"/><circle cx="224" cy="68" r="4" fill="#e23b3b"/><circle cx="224" cy="78" r="4" fill="#4caf50"/>
+          <rect x="8" y="154" width="16" height="26" rx="3" fill="#222"/><circle cx="16" cy="162" r="4" fill="#e23b3b"/><circle cx="16" cy="172" r="4" fill="#f2c94c"/>
+          <rect x="216" y="154" width="16" height="26" rx="3" fill="#222"/><circle cx="224" cy="162" r="4" fill="#e23b3b"/><circle cx="224" cy="172" r="4" fill="#4caf50"/>
+        </g>
+        <!-- labels -->
+        <text x="120" y="228" text-anchor="middle" font-family="Arial" font-weight="700" font-size="13" fill="#fff">① 綠燈進入最左車道</text>
+        <circle cx="104" cy="132" r="9" fill="#fff"/><text x="104" y="136" text-anchor="middle" font-family="Arial" font-weight="700" font-size="11" fill="#111">2</text>
+        <text x="122" y="128" font-family="Arial" font-weight="700" font-size="11" fill="#fff">等待橫向燈變綠</text>
+        <text x="150" y="118" font-family="Arial" font-weight="700" font-size="11" fill="#fff">③ 右轉直行</text>
+      </svg>
+      <figcaption>勾型轉彎：① 綠燈時進最左車道 → ② 停在路口左前方等橫向燈轉綠 → ③ 順勢右轉</figcaption>
+    </figure>
+  </div>
+  <h4>靠左行駛與優先權（Give Way）</h4>
+  <ul>
+    <li>左側通行：副駕在左，雨刷與方向燈通常相反。默念「左轉轉小彎、右轉轉大彎」。</li>
+    <li>圓環：進入前完全停下，禮讓右側已在圓環內車輛，順時針繞行，離開前打左方向燈。</li>
+    <li>無號誌路口：禮讓右方來車。</li>
+  </ul>
+  <h4>嚴禁超速 / 路口超車</h4>
+  <ul>
+    <li>執法極嚴，超速 2–3 km 就會被隱藏測速開罰，罰金常 $200 起跳。</li>
+    <li>見警車、救護車閃燈，立刻打燈靠左減速或停下禮讓。</li>
+  </ul>
+  <h4>電車（Tram）絕對優先權</h4>
+  <ul>
+    <li>電車停在路中開門上下客時，後方汽車須完全停在電車尾後，不能從左側強行通過；待車門關、乘客走上人行道才起步。</li>
+    <li>黃色實線條紋的電車軌道車道，汽車絕不可駛入。</li>
+  </ul>
+  <h4>停車牌重點</h4>
+  <ul>
+    <li>數字在 P 左邊＝小時（如 1P＝1 小時）；數字在 P 右邊＋MINUTE＝分鐘（如 P10＝10 分鐘）。</li>
+    <li>牌上時間＝限制生效時段，沒寫到的時段通常不限時。</li>
+    <li>付費：METER、PAY HERE、PAY & DISPLAY（放票）、PAY BY PLATE（信用卡／APP）。</li>
+    <li>NO STOPPING＝完全不能停；NO PARKING＝可短暫上下客但駕駛不得離車；CLEARWAY＝指定時段絕對不能停（會拖吊）。</li>
+  </ul>
+  <div class="fig-row">
+    <figure class="fig">
+      <div class="psign">
+        <div class="prow red">
+          <div class="nostop">🚫</div>
+          <div class="ptxt"><b>7:30–9:30 AM</b><br><span>MON–FRI</span></div>
+          <div class="parrow">↔</div>
+        </div>
+        <div class="prow split">
+          <div class="pcell">
+            <div class="big">1P</div><div class="lbl">METER</div>
+            <div class="ptxt2">9:30AM–7:30PM MON–FRI<br>7:30AM–7:30PM SAT</div>
+            <div class="parrow g">←</div>
+          </div>
+          <div class="pcell">
+            <div class="big">4P</div><div class="dis">♿ ONLY</div>
+            <div class="ptxt2">ALL OTHER TIMES</div>
+            <div class="parrow g">→</div>
+          </div>
+        </div>
+        <div class="prow">
+          <div class="big sm">P</div><div class="lbl">METER</div>
+          <div class="ptxt2">7:30PM–8:30PM MON–SAT</div>
+          <div class="parrow g">←</div>
+        </div>
+        <div class="prow">
+          <div class="big sm">1P</div>
+          <div class="ptxt2">7:30AM–6:30PM SUN</div>
+          <div class="parrow g">←</div>
+        </div>
+      </div>
+      <figcaption>停車牌範例：同一柱子由上到下依時段規定不同，務必對照當下星期與時間判讀。箭頭代表適用的停車方向／範圍。</figcaption>
+    </figure>
+  </div>
+  <h4>加油省錢 APP</h4>
+  <ul><li>Petrol Spy Australia　·　Fuel Map Australia</li></ul>
+</div></section>
+
+<!-- TRS -->
+<section id="trs"><div class="info-card">
+  <h3>💸 觀光離境退稅（TRS）</h3>
+  <ul>
+    <li>GST 稅金 10%，一律機場退稅，<b>退信用卡、不可退現金</b>。</li>
+    <li>同一 ABN 號碼須累積達澳幣 $300 且 GST 超過 $27.27 才符合。</li>
+    <li>購買時索取發票 → 下載 TRS APP 填資料 → 機場 TRS 櫃檯出示商品、發票、護照、登機證。</li>
+    <li>請於距登機至少 30 分鐘前辦理。</li>
+    <li>抵達機場「托運前」先到 Border Force 檢查需托運的退稅商品。</li>
+    <li>進入海關後退稅：手提行李、貴重物品要帶進去通關。</li>
+  </ul>
+</div></section>
+
+<!-- TIPS -->
+<section id="tips"><div class="info-card">
+  <h3>🔌 實用資訊</h3>
+  <h4>電壓 / 插座</h4>
+  <ul><li>電壓 230–240V，澳洲三孔插座（I 型），記得帶轉接頭。</li></ul>
+  <h4>電車 / 交通</h4>
+  <ul>
+    <li>市區有免費電車區（Free Tram Zone），區內免刷卡。</li>
+    <li><a href="https://drive.google.com/file/d/1UjRD-AEji9fvjOhznkjcG-m3JkVbRJUt/view" target="_blank">墨爾本電車免費區地圖</a></li>
+    <li>超出免費區需上下車刷卡，可用信用卡、金融卡、手機感應（Apple Pay）。</li>
+  </ul>
+  <h4>洗衣</h4>
+  <ul><li>多數住宿有洗衣／烘衣機（部分投幣式），可分段整理行李。</li></ul>
+  <h4>🛒 澳洲連鎖超市四大巨頭</h4>
+  <ul>
+    <li><b>Woolworths</b>（俗稱 Woolies）：澳洲市佔率最高的最大超市。分店極多，蔬果生鮮品質普遍較佳、肉類選擇多。優惠為 Everyday Rewards 點數系統。</li>
+    <li><b>Coles</b>：與 Woolworths 並列兩大龍頭。商品種類非常完善，許多分店營業至深夜或 24 小時，方便採買。Flybuys 點數系統，與 Shell 合作加油有折扣。</li>
+    <li><b>ALDI</b>：德國品牌，主打低價與超高性價比。超過 80% 商品為自有品牌，價格通常最低，適合日用品與食材大採購，但品項較少。</li>
+    <li><b>IGA</b>（Independent Grocers of Australia）：本地獨立零售商連鎖。普及於鄉村小鎮，價格通常較高，但通常離住宅區最近、便利性強。</li>
+  </ul>
+  <h4>💊 藥妝店</h4>
+  <ul>
+    <li><b>Chemist Warehouse</b>（小黃屋／藍黃屋）：澳洲最大、最便宜的連鎖藥妝店，藍黃配色招牌極好認。保健品（維他命）、日常保養品、香水價格最低，促銷活動多。必買各類保健品（Swisse、Blackmores、Bioisland）、木瓜霜、護膚品。</li>
+    <li><b>Priceline Pharmacy</b>：分店多，風格較像精緻的美妝店。藥劑師諮詢服務好，彩妝品、護膚品牌選擇比小黃屋多。適合喜歡逛美妝、尋找專業藥妝保養品牌。</li>
+    <li><b>TerryWhite Chemmart</b>：另一間分佈廣的連鎖藥妝店，提供專業處方藥和藥劑師服務。</li>
+  </ul>
+</div></section>
+
+
+<!-- SHOP -->
+<section id="shop"><div class="info-card">
+  <h3>🛍️ 伴手禮參考</h3>
+  <ul>
+    <li><a href="https://oldmeltravel.com/%E6%BE%B3%E6%B4%B2%E5%BF%85%E8%B2%B7%E9%9B%B6%E9%A3%9Ftop15%EF%BC%81/" target="_blank">澳洲必買零食 TOP 15</a></li>
+    <li><a href="https://oldmeltravel.com/2026-must-buy-australian-drugstore-products-recommendations/" target="_blank">澳洲藥妝必買清單</a></li>
+  </ul>
+  <p class="muted">採買地點：Woolworths Metro Southern Cross、維多利亞市場、Outlet（Spencer／DFO South Wharf）。</p>
+</div></section>
+
+</div>
+
+<footer>墨爾本家族之旅 · 2026/7/16–7/24 · 資料整理自行程表</footer>
+
+<script>
+// highlight active nav on scroll
+const links=[...document.querySelectorAll('#nav a')];
+const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const obs=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){
+    links.forEach(l=>l.style.outline='');
+    const a=map.get(e.target.id);
+    if(a){a.style.outline='2px solid var(--accent)';a.scrollIntoView({inline:'center',block:'nearest'});}
+  }});
+},{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section').forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>
