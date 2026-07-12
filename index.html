@@ -101,6 +101,16 @@ a.map:hover{opacity:1}
 .cost-table td{padding:6px 8px;border-bottom:1px solid var(--line)}
 .cost-table td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--accent)}
 .muted{color:var(--muted);font-size:.85rem}
+.fx-rate{font-size:.95rem;font-weight:600;color:var(--accent2);margin:4px 0 14px}
+.fx-rate input{width:88px;font-size:1rem;font-weight:700;text-align:center;padding:4px 6px;
+  border:1px solid var(--line);border-radius:8px;color:var(--accent)}
+.fx-grid{display:flex;align-items:flex-end;gap:10px}
+.fx-field{flex:1;display:flex;flex-direction:column;gap:4px}
+.fx-field span{font-size:.8rem;color:var(--muted);font-weight:600}
+.fx-field input{width:100%;font-size:1.4rem;font-weight:700;padding:10px 12px;
+  border:1px solid var(--line);border-radius:10px;background:#faf7f0;color:var(--ink)}
+.fx-field input:focus{outline:2px solid var(--accent);border-color:transparent}
+.fx-eq{font-size:1.3rem;color:var(--muted);padding-bottom:10px}
 footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
 @media(max-width:560px){
   .flight-grid{grid-template-columns:1fr}
@@ -129,6 +139,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
   <a href="#drive" class="info">🚗 自駕</a>
   <a href="#trs" class="info">💸 退稅</a>
   <a href="#tips" class="info">🔌 實用</a>
+  <a href="#fx" class="info">💱 匯率</a>
   <a href="#shop" class="info">🛍️ 伴手禮</a>
 </nav>
 
@@ -546,6 +557,18 @@ Outlet：Spencer Outlet Centre／DFO South Wharf（走路 15 分鐘）</div></di
 </div></section>
 
 
+<!-- FX -->
+<section id="fx"><div class="info-card">
+  <h3>💱 匯率換算</h3>
+  <div class="fx-rate">1 AUD ＝ <input id="fxRate" type="number" step="0.01" min="0" value="22.31"> TWD</div>
+  <div class="fx-grid">
+    <label class="fx-field"><span>澳幣 AUD</span><input id="fxAud" type="number" inputmode="decimal" placeholder="0"></label>
+    <div class="fx-eq">＝</div>
+    <label class="fx-field"><span>台幣 TWD</span><input id="fxTwd" type="number" inputmode="decimal" placeholder="0"></label>
+  </div>
+  <p class="muted">預設為市場中間價（約 2026/7/11）。實際刷卡／換鈔會有價差，僅供估算。可直接修改上方匯率數字，會自動記住。</p>
+</div></section>
+
 <!-- SHOP -->
 <section id="shop"><div class="info-card">
   <h3>🛍️ 伴手禮參考</h3>
@@ -572,6 +595,24 @@ const obs=new IntersectionObserver((es)=>{
   }});
 },{rootMargin:'-45% 0px -50% 0px'});
 document.querySelectorAll('section').forEach(s=>obs.observe(s));
+
+// currency converter (fixed rate, editable, bidirectional)
+(function(){
+  const rateEl=document.getElementById('fxRate'),
+        aud=document.getElementById('fxAud'),
+        twd=document.getElementById('fxTwd');
+  if(!rateEl) return;
+  const saved=localStorage.getItem('fxRate');
+  if(saved) rateEl.value=saved;
+  const rate=()=>parseFloat(rateEl.value)||0;
+  const round=n=>Math.round(n*100)/100;
+  aud.addEventListener('input',()=>{ twd.value = aud.value==='' ? '' : round(parseFloat(aud.value)*rate()); });
+  twd.addEventListener('input',()=>{ aud.value = twd.value==='' || rate()===0 ? '' : round(parseFloat(twd.value)/rate()); });
+  rateEl.addEventListener('input',()=>{
+    localStorage.setItem('fxRate',rateEl.value);
+    if(aud.value!=='') twd.value=round(parseFloat(aud.value)*rate());
+  });
+})();
 </script>
 </body>
 </html>
